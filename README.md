@@ -1,4 +1,4 @@
 # Employee-Tracker
 Placeholder
 ## Credits
-Borrowed schema from https://github.com/ruthtech/employee-tracker
+Learned how to setup schema and seed from https://github.com/ruthtech/employee-tracker
