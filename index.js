@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
   database: "employee_trackerDB"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) throw err;
   runSearch();
 });
@@ -33,43 +33,108 @@ function runSearch() {
         "Update employee roles"
       ]
     })
-    .then(function(answer) {
+    .then(function (answer) {
       switch (answer.action) {
-      case "Add departments, roles, or employees":
-        add();
-        break;
+        case "Add departments, roles, or employees":
+          add();
+          break;
 
-      case "View departments, roles, or employees":
-        view();
-        break;
+        case "View departments, roles, or employees":
+          view();
+          break;
 
-      case "Update employee roles":
-        update();
-        break;
+        case "Update employee roles":
+          update();
+          break;
       }
     });
 }
-function add(){
+function view() {
   inquirer
     .prompt({
       name: "new",
-      type: "input",
-      message: "Would you like to add a department, role, or employee?"
-    })
+      type: "rawlist",
+      message: "Would you like to add a department, role, or employee?",
+      choices: ["Department", "Role", "Employee"]
+    }).then(function (answer) {
+      switch (answer.action) {
+        case "Department":
+          addDepartment()
+          break;
+        case "Role":
+          addRole()
+          break;
+        case "Employee":
+          addEmployee()
+          break;
+      }
+    });
 }
-function view(){
+//add department
+function addDepartment() {
+  inquirer.prompt({
+    name: "new",
+    type: "input",
+    message: "What is the name of the new department."
+  })
+}
+//add role
+function addRole() { }
+//add employee
+function addEmployee() { }
+function view() {
   inquirer
     .prompt({
-      name: "search",
-      type: "input",
-      message: "Would you like to view a department, role, or employee?"
-    })
+      name: "new",
+      type: "rawlist",
+      message: "Would you like to view a department, role, or employee?",
+      choices: ["Department", "Role", "Employee"]
+    }).then(function (answer) {
+      switch (answer.action) {
+        case "Department":
+          viewDepartment()
+          break;
+        case "Role":
+          viewRole()
+          break;
+        case "Employee":
+          viewEmployee()
+          break;
+      }
+    });
 }
-function update(){
+//view department
+function viewDepartment() { }
+//view Role
+function viewRole() { }
+//view employee
+function viewEmployee() { }
+//change employee role
+function update() {
   inquirer
     .prompt({
-      name: "promote",
-      type: "input",
-      message: "Who would you like to promote?"
+      // name: "action",
+      // type: "rawlist",
+      // message: "What would you like to do?",
+      // choices: [
+      //   "Add departments, roles, or employees",
+      //   "View departments, roles, or employees",
+      //   "Update employee roles"
+      // ]
     })
+    .then(function (answer) {
+      switch (answer.action) {
+        // case "Add departments, roles, or employees":
+        //   add();
+        //   break;
+
+        // case "View departments, roles, or employees":
+        //   view();
+        //   break;
+
+        // case "Update employee roles":
+        //   update();
+        //   break;
+      }
+    });
 }
