@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var cTable = require("console.table");
+//var cTable = require("console.table");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -76,7 +76,16 @@ function addDepartment() {
     name: "new",
     type: "input",
     message: "What is the name of the new department."
-  })
+  }).then(answer => {
+    let newDept = 'INSERT into Department (name) VALUES ?}';
+
+    connection.query(newDept, answer), function (err) {
+      if (err) throw err;;
+    }
+    connection.end();
+    runSearch()
+  }
+  )
 }
 //add role
 function addRole() { }
