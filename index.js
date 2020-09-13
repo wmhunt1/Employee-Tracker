@@ -88,9 +88,70 @@ function addDepartment() {
   )
 }
 //add role
-function addRole() { }
+function addRole() {
+  inquirer.prompt({
+    name: "title",
+    type: "input",
+    message: "What is the title of the new role?"
+  },
+  {
+    name: "salary",
+    type: "input",
+    message: "What is the salary for the new role?"
+  },
+  {
+    name: "department",
+    type: "rawlist",
+    message: "What is department does this role belong to?",
+    //need to print deptartment list
+    choices: []
+  }).then(answer => {
+    let newRole = 'INSERT into Job (title, salary, department_id) VALUES ?, ?, ?}';
+    let title = answer.title;
+    let salary = answer.salary;
+    //need something to find dept id
+    let department_id = answers.department_id;
+    connection.query(newRole, title, salary, department_id), function (err) {
+      if (err) throw err;;
+    }
+    connection.end();
+    runSearch()
+  }
+  )
+ }
 //add employee
-function addEmployee() { }
+function addEmployee() {
+  inquirer.prompt({
+    name: "firstName",
+    type: "input",
+    message: "What is the new employee's first name?"
+  },
+  {
+    name: "lastName",
+    type: "input",
+    message: "What is the new employee's first name?"
+  },
+  {
+    name: "job",
+    type: "rawlist",
+    message: "What is their job?",
+    choices: []
+  }).then(answer => {
+    let newRole = 'INSERT into Job (first_name, last_name, role_id, manager_id) VALUES ?, ?, ?, ?}';
+    let firstName = answer.firstName;
+    let lastName = answer.lastName;
+    //need something to find role id
+    let job = answers.role_id;
+    //need something to find manger id or select from managers
+    let manager_id = answers.manager_id;
+    connection.query(newRole, firstName, lastName, job, manager_id), function (err) {
+      if (err) throw err;;
+    }
+    connection.end();
+    runSearch()
+  }
+  )
+ }
 function view() {
   inquirer
     .prompt({

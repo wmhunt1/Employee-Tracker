@@ -17,26 +17,26 @@ INSERT into Department (name) VALUES ("Redacted"); -- 10
 
 -- make jobs
 -- Template INSERT into role (title, salary, department_id) VALUES ("Name", #, #);
-INSERT into role (title, salary, department_id) VALUES ("Accounting Manager", 50000, 1); -- 1
-INSERT into role (title, salary, department_id) VALUES ("Accountant", 25000, 1); -- 2
-INSERT into role (title, salary, department_id) VALUES ("Engineering Manager", 50000, 2); --3
-INSERT into role (title, salary, department_id) VALUES ("Engineer", 25000, 2); --4
-INSERT into role (title, salary, department_id) VALUES ("Financial Manager", 50000, 3); --5
-INSERT into role (title, salary, department_id) VALUES ("Financial Employee", 25000, 3); --6
-INSERT into role (title, salary, department_id) VALUES ("HR Manager", 50000, 4); --7
-INSERT into role (title, salary, department_id) VALUES ("HR Employee", 25000, 4); --8
-INSERT into role (title, salary, department_id) VALUES ("IT Manager", 50000, 5); --9
-INSERT into role (title, salary, department_id) VALUES ("IT Employee", 25000, 5); --10
-INSERT into role (title, salary, department_id) VALUES ("Marketing Manager", 50000, 6); --11
-INSERT into role (title, salary, department_id) VALUES ("Marketer", 25000, 6); --12
-INSERT into role (title, salary, department_id) VALUES ("Production Manager", 50000, 7); --13
-INSERT into role (title, salary, department_id) VALUES ("Producer", 25000, 7); -- 14
-INSERT into role (title, salary, department_id) VALUES ("Purchasing Manager", 50000, 8); -- 15
-INSERT into role (title, salary, department_id) VALUES ("Purchaser", 25000, 8); -- 16
-INSERT into role (title, salary, department_id) VALUES ("Sales Manager", 50000, 9); -- 17
-INSERT into role (title, salary, department_id) VALUES ("Seller", 25000, 9); -- 18
-INSERT into role (title, salary, department_id) VALUES ("Redacted Manager", 50000, 10); -- 19
-INSERT into role (title, salary, department_id) VALUES ("Redacted", 25000, 10); -- 20
+INSERT into job (title, salary, department_id) VALUES ("Accounting Manager", 50000, 1); -- 1
+INSERT into job (title, salary, department_id) VALUES ("Accountant", 25000, 1); -- 2
+INSERT into job (title, salary, department_id) VALUES ("Engineering Manager", 50000, 2); --3
+INSERT into job (title, salary, department_id) VALUES ("Engineer", 25000, 2); --4
+INSERT into job (title, salary, department_id) VALUES ("Financial Manager", 50000, 3); --5
+INSERT into job (title, salary, department_id) VALUES ("Financial Employee", 25000, 3); --6
+INSERT into job (title, salary, department_id) VALUES ("HR Manager", 50000, 4); --7
+INSERT into job (title, salary, department_id) VALUES ("HR Employee", 25000, 4); --8
+INSERT into job (title, salary, department_id) VALUES ("IT Manager", 50000, 5); --9
+INSERT into job (title, salary, department_id) VALUES ("IT Employee", 25000, 5); --10
+INSERT into job (title, salary, department_id) VALUES ("Marketing Manager", 50000, 6); --11
+INSERT into job (title, salary, department_id) VALUES ("Marketer", 25000, 6); --12
+INSERT into job  (title, salary, department_id) VALUES ("Production Manager", 50000, 7); --13
+INSERT into job (title, salary, department_id) VALUES ("Producer", 25000, 7); -- 14
+INSERT into job (title, salary, department_id) VALUES ("Purchasing Manager", 50000, 8); -- 15
+INSERT into job (title, salary, department_id) VALUES ("Purchaser", 25000, 8); -- 16
+INSERT into job (title, salary, department_id) VALUES ("Sales Manager", 50000, 9); -- 17
+INSERT into job (title, salary, department_id) VALUES ("Seller", 25000, 9); -- 18
+INSERT into job (title, salary, department_id) VALUES ("Redacted Manager", 50000, 10); -- 19
+INSERT into job (title, salary, department_id) VALUES ("Redacted", 25000, 10); -- 20
 
 -- make employee
 
