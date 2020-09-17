@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
 
   // Your port;
-  port: 3000,
+  port: 3306,
 
   // Your username
   user: "root",
@@ -49,7 +49,7 @@ function runSearch() {
       }
     });
 }
-function view() {
+function add() {
   inquirer
     .prompt({
       name: "new",
@@ -77,7 +77,7 @@ function addDepartment() {
     type: "input",
     message: "What is the name of the new department."
   }).then(answer => {
-    let newDept = 'INSERT into Department (name) VALUES ?}';
+    let newDept = 'INSERT into department (name) VALUES ?}';
 
     connection.query(newDept, answer), function (err) {
       if (err) throw err;;
@@ -106,7 +106,7 @@ function addRole() {
     //need to print deptartment list
     choices: []
   }).then(answer => {
-    let newRole = 'INSERT into Job (title, salary, department_id) VALUES ?, ?, ?}';
+    let newRole = 'INSERT into job (title, salary, department_id) VALUES ?, ?, ?}';
     let title = answer.title;
     let salary = answer.salary;
     //need something to find dept id
@@ -137,7 +137,7 @@ function addEmployee() {
     message: "What is their job?",
     choices: []
   }).then(answer => {
-    let newRole = 'INSERT into Job (first_name, last_name, role_id, manager_id) VALUES ?, ?, ?, ?}';
+    let newRole = 'INSERT into job (first_name, last_name, role_id, manager_id) VALUES ?, ?, ?, ?}';
     let firstName = answer.firstName;
     let lastName = answer.lastName;
     //need something to find role id
